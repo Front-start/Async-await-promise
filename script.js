@@ -10,6 +10,12 @@ function createSpanWithText(parent, text) {
   });
 }
 
+createSpanWithText(testPromise1, 1)
+  .then(res => createSpanWithText2(testPromise1, res))
+  .then(res => createSpanWithText2(testPromise1, res))
+  .then(res => createSpanWithText2(testPromise1, res))
+  .then(res => createSpanWithText2(testPromise1, res));
+
 Promise.resolve()
   .then(() => createSpanWithText2(testPromise, 1))
   .then(res => createSpanWithText2(testPromise, res))
