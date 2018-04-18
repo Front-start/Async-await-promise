@@ -9,9 +9,26 @@
 
 <body>
     <div id="testPromise"></div>
+    <div id="testPromise2"></div>
     <div id="testAsync"></div>
+    <div id="testPromise4"></div>
     <link rel="stylesheet" href="/public/styles.css" />
+
+    <script>
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+        async function createSpanWithText2(parent, text) {
+            let newSpan = document.createElement("span");
+            newSpan.innerHTML = text;
+            parent.appendChild(newSpan);
+            await sleep(1111);
+            return text + 1;
+        }
+    </script>
     <script src="/public/bundle.js"></script>
+
+
 </body>
 
 </html>
