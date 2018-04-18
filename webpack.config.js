@@ -34,7 +34,9 @@ module.exports = {
             ],
             plugins: [
               "transform-class-properties",
-              "transform-object-rest-spread"
+              "transform-object-rest-spread",
+              "syntax-async-functions",
+              "transform-regenerator"
             ]
           }
         }
